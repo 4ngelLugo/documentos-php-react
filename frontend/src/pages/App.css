@@ -1,0 +1,11 @@
+.alert {
+  width: 100%;
+}
+
+.errorAlert {
+  background-color: red;
+}
+
+.successAlert {
+  background-color: green;
+}

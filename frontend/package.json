@@ -26,7 +26,7 @@
     "standard": "^17.1.2",
     "vite": "^6.0.5"
   },
-  "proxy": "http://localhost:8000",
+  "proxy": "http://localhost:8000/",
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
   }
