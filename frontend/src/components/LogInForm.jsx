@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import imagotipo from '../assets/imagotipo.svg'
 
-export default function LogInForm () {
+export default function LogInForm() {
   const [alertMessage, setAlertMessage] = useState()
   const [alertType, setAlertType] = useState()
 
@@ -8,7 +9,6 @@ export default function LogInForm () {
     setAlertMessage(alertMessage)
     setAlertType(alertType)
     setTimeout(() => {
-      setAlertMessage('')
       setAlertType('')
     }, 5000)
   }
@@ -45,18 +45,26 @@ export default function LogInForm () {
   }
 
   return (
-    <form action='' onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor='id'>Identificación</label>
-        <input type='text' id='id' name='id' placeholder='Identificación' />
-      </div>
-      <div>
-        <label htmlFor='password'>Contraseña</label>
-        <input type='password' id='password' name='password' placeholder='Contraseña' />
-      </div>
-      <button type='submit'>Iniciar Sesión</button>
+    <>
+      <form className='login_form' onSubmit={handleSubmit}>
+        <div className='logo_div'>
+          <img src={imagotipo} alt='React logo' />
+        </div>
 
-      <div className={`alert ${alertType}`}>{alertMessage}</div>
-    </form>
+        <div className='login_form-input_div'>
+          <label htmlFor='id'>Identificación</label>
+          <input type='text' id='id' name='id' placeholder='Identificación' />
+        </div>
+
+        <div className='login_form-input_div'>
+          <label htmlFor='password'>Contraseña</label>
+          <input type='password' id='password' name='password' placeholder='Contraseña' />
+        </div>
+
+        <button className='login_form-button' type='submit'>Iniciar Sesión</button>
+      </form>
+
+      <div className={`login_form-alert ${alertType}`}>{alertMessage}</div>
+    </>
   )
 }

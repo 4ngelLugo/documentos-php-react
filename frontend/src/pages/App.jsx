@@ -1,14 +1,10 @@
 import LogInForm from '../components/LogInForm'
-import imagotipo from '../assets/imagotipo.svg'
 import './App.css'
 
-export default function App () {
+export default function App() {
   return (
-    <>
-      <div>
-        <img src={imagotipo} alt='React logo' />
-      </div>
+    <main className='app'>
       <LogInForm />
-    </>
+    </main>
   )
 }
