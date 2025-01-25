@@ -42,6 +42,9 @@ export default function LogInForm() {
           showAlert('Inicio de sesión exitoso', 'successAlert')
         }
       })
+      .catch((error) => {
+        showAlert(`Error en la solicitud: ${error.message}`, 'errorAlert')
+      })
   }
 
   return (
