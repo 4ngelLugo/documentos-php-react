@@ -20,7 +20,6 @@ class AuthController
 
     $user = $this->userModel->validateLogIn($id, $password);
     if ($user) {
-
       return ["success" => "logIn success", "user" => $user];
     }
 

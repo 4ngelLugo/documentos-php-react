@@ -29,20 +29,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $id = $_POST['id'] ?? null;
   $password = $_POST['password'] ?? null;
-  
-  $_SESSION['user'] = 'hola';
 
   $output = $authController->logIn($id, $password);
 
-  $user = $output['user'];
+  if (isset($output['success'])) {
+    $user = $output['user'];
 
-  $_SESSION['user'] = [
-    'id' => $user['usuarioID'],
-    'name' => $user['usuarioNombre'],
-    'role' => $user['rolId'],
-    'image' => $user['usuarioImagenDir'],
-  ];
+    $_SESSION['user'] = [
+      'id' => $user[0]['usuarioID'],
+      'name' => $user[0]['usuarioNombre'],
+      'role' => $user[1],
+      'image' => $user[0]['usuarioImagenDir'],
+    ];
 
+    array_pop($output);
+  }
 } else {
   $output = ['error' => 'invalid method'];
 }

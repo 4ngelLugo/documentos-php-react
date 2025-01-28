@@ -48,9 +48,9 @@ export default function LogInForm() {
           }, 1000)
         }
       })
-      .catch((error) => {
-        showAlert(`Error en la solicitud: ${error.message}`, 'errorAlert')
-      })
+      // .catch((error) => {
+      //   showAlert(`Error en la solicitud: ${error.message}`, 'errorAlert')
+      // })
   }
 
   return (
