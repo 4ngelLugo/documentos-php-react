@@ -1,9 +1,9 @@
 import LogInForm from '../components/LogInForm'
-import './login.css'
+import '../styles/login.css'
 
 export default function Login () {
   return (
-    <main className='app'>
+    <main className='Login'>
       <LogInForm />
     </main>
   )

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import imagotipo from '../assets/imagotipo.svg'
+import { useNavigate } from 'react-router-dom'
 
-export default function LogInForm() {
+export default function LogInForm () {
   const [alertMessage, setAlertMessage] = useState()
   const [alertType, setAlertType] = useState()
+  const navigate = useNavigate()
 
   const showAlert = (alertMessage, alertType) => {
     setAlertMessage(alertMessage)
@@ -20,7 +22,8 @@ export default function LogInForm() {
 
     fetch('http://localhost/backend/login.php', {
       method: 'POST',
-      body: formData
+      body: formData,
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((response) => {
@@ -40,6 +43,9 @@ export default function LogInForm() {
           }
         } else if (response.success) {
           showAlert('Inicio de sesión exitoso', 'successAlert')
+          setTimeout(() => {
+            navigate('/home')
+          }, 1000)
         }
       })
       .catch((error) => {
