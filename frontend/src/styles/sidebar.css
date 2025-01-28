@@ -1,0 +1,46 @@
+.sidebar {
+  margin    : .5rem .25rem .5rem .5rem;
+  padding   : 1rem;
+  height    : calc(100dvh - 1rem);
+  flex-basis: 300px;
+
+  background-color: #fcfcfc;
+  border-radius: .8em;
+}
+
+.close {
+  display        : flex;
+  justify-content: flex-end;
+}
+
+.close span {
+  width : 1.5em;
+  height: 1.5em;
+
+  display      : none;
+  place-content: center;
+
+  background-color: #ff0000;
+  border-radius   : 50%;
+  color           : #fff;
+  font-weight     : 900;
+}
+
+.user_pfp {
+  padding: 1rem;
+
+  display      : grid;
+  place-content: center;
+}
+
+.user_pfp img {
+  border-radius: 50%;
+}
+
+.user_name {
+  text-transform: capitalize;
+}
+
+.user_role {
+  color: #666666;
+}

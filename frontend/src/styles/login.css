@@ -2,7 +2,7 @@ html {
   font-size: clamp(1rem, 1.2vw, 4rem);
 }
 
-.app {
+.Login {
   width        : 100dvw;
   height       : 100dvh;
   display      : grid;

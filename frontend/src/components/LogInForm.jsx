@@ -2,7 +2,7 @@ import { useState } from 'react'
 import imagotipo from '../assets/imagotipo.svg'
 import { useNavigate } from 'react-router-dom'
 
-export default function LogInForm() {
+export default function LogInForm () {
   const [alertMessage, setAlertMessage] = useState()
   const [alertType, setAlertType] = useState()
   const navigate = useNavigate()
@@ -48,9 +48,9 @@ export default function LogInForm() {
           }, 1000)
         }
       })
-      // .catch((error) => {
-      //   showAlert(`Error en la solicitud: ${error.message}`, 'errorAlert')
-      // })
+      .catch((error) => {
+        showAlert(`Error en la solicitud: ${error.message}`, 'errorAlert')
+      })
   }
 
   return (

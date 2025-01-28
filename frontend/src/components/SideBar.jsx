@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
+import '../styles/sidebar.css'
 import defaultUserPfp from '../assets/pictures/user.png'
 
-export default function SideBar() {
+export default function SideBar () {
   const [userData, setUserData] = useState()
 
   const getUserData = async () => {
@@ -18,18 +19,19 @@ export default function SideBar() {
   }, [])
 
   return (
-    <aside className="sidebar">
-      <div className="close">
-        X
+    <aside className='sidebar'>
+      <div className='close'>
+        <span>X</span>
       </div>
-      <section className="user_info">
+      <section className='user_info'>
         {userData &&
           <>
-            <img src={defaultUserPfp} width="100px" />
-            <h2>{userData.name}</h2>
-            <p>{userData.role}</p>
-          </>
-        }
+            <div className='user_pfp'>
+              <img src={defaultUserPfp} width='100px' />
+            </div>
+            <h2 className='user_name'>{userData.name}</h2>
+            <p className='user_role'>{userData.role}</p>
+          </>}
       </section>
     </aside>
   )
