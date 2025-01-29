@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react'
 import '../styles/sidebar.css'
 import defaultUserPfp from '../assets/pictures/user.png'
+import { useUserData } from '../hooks/useUserData'
 
-export default function SideBar () {
-  const [userData, setUserData] = useState()
+export default function SideBar() {
+  const { userData } = useUserData(null)
+  
 
-  const getUserData = async () => {
-    const response = await fetch('http://localhost/backend/session.php', {
-      method: 'POST',
-      credentials: 'include'
-    })
-    const data = await response.json()
-    setUserData(data)
-  }
-
-  useEffect(() => {
-    getUserData()
-  }, [])
+  if (!userData) return (<p>Cargando...</p>)
 
   return (
     <aside className='sidebar'>
@@ -24,15 +14,12 @@ export default function SideBar () {
         <span>X</span>
       </div>
       <section className='user_info'>
-        {userData &&
-          <>
-            <div className='user_pfp'>
-              <img src={defaultUserPfp} width='100px' />
-            </div>
-            <h2 className='user_name'>{userData.name}</h2>
-            <p className='user_role'>{userData.role}</p>
-          </>}
+        <div className='user_pfp'>
+          <img src={defaultUserPfp} width='100px' />
+        </div>
+        <h2 className='user_name'>{userData.name}</h2>
+        <p className='user_role'>{userData.role}</p>
       </section>
-    </aside>
+    </aside >
   )
 }

@@ -18,7 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $output = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $output = $_SESSION['user'] ?? null;
+  if (isset($_SESSION['user'])) {
+    $output = $_SESSION['user'] ?? null;
+  } else {
+    $output= ['error' => 'no session'];
+  }
 } else {
   $output = ['error' => 'invalid method'];
 }
