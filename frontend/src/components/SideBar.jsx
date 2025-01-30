@@ -1,13 +1,8 @@
 import '../styles/sidebar.css'
 import defaultUserPfp from '../assets/pictures/user.png'
-import { useUserData } from '../hooks/useUserData'
 import LogOutButton from './LogOutButton'
 
-export default function SideBar() {
-  const { userData } = useUserData(null)
-
-
-  if (!userData) return (<p>Cargando...</p>)
+export default function SideBar({ userName, userRole }) {
 
   return (
     <aside className='sidebar'>
@@ -19,8 +14,8 @@ export default function SideBar() {
           <div className='user_pfp'>
             <img src={defaultUserPfp} width='100px' />
           </div>
-          <h2 className='user_name'>{userData.name}</h2>
-          <p className='user_role'>{userData.role}</p>
+          <h2 className='user_name'>{userName}</h2>
+          <p className='user_role'>{userRole}</p>
         </section>
       </div>
       <LogOutButton />
