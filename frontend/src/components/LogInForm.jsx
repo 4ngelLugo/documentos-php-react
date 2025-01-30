@@ -7,6 +7,8 @@ export default function LogInForm () {
   const [alertType, setAlertType] = useState()
   const navigate = useNavigate()
 
+  const LOGIN_PREFIX_URL = 'http://localhost/backend/login.php'
+
   const showAlert = (alertMessage, alertType) => {
     setAlertMessage(alertMessage)
     setAlertType(alertType)
@@ -20,7 +22,7 @@ export default function LogInForm () {
 
     const formData = new FormData(event.target)
 
-    fetch('http://localhost/backend/login.php', {
+    fetch(LOGIN_PREFIX_URL, {
       method: 'POST',
       body: formData,
       credentials: 'include'
@@ -49,7 +51,8 @@ export default function LogInForm () {
         }
       })
       .catch((error) => {
-        showAlert(`Error en la solicitud: ${error.message}`, 'errorAlert')
+        console.log(error.message)
+        showAlert('Error en la solicitud', 'errorAlert')
       })
   }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const SESSION_URL = 'http://localhost/backend/session.php'
+const SESSION_PREFIX_URL = 'http://localhost/backend/session.php'
 
 export const useUserData = () => {
   const [userData, setUserData] = useState()
@@ -9,7 +9,7 @@ export const useUserData = () => {
 
   useEffect(() => {
     async function getUserData() {
-      const response = await fetch(SESSION_URL, {
+      const response = await fetch(SESSION_PREFIX_URL, {
         method: 'POST',
         credentials: 'include'
       })

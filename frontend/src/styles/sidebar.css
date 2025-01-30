@@ -4,8 +4,12 @@
   height    : calc(100dvh - 1rem);
   flex-basis: 300px;
 
+  display        : flex;
+  flex-flow      : column;
+  justify-content: space-between;
+
   background-color: #fcfcfc;
-  border-radius: .8em;
+  border-radius   : .8em;
 }
 
 .close {
@@ -43,4 +47,22 @@
 
 .user_role {
   color: #666666;
+}
+
+.logOutBtn {
+  padding: .7rem;
+
+  border       : 1px solid var(--red);
+  border-radius: .5em;
+  color        : var(--red);
+
+  font: 600 1rem system-ui;
+
+  transition: background-color 300ms ease;
+  cursor    : pointer;
+}
+
+.logOutBtn:hover {
+  background-color: var(--red);
+  color           : #fff;
 }

@@ -14,7 +14,10 @@
   --light-blue: #64c2db;
   --dark-blue : #7476ed;
   --pink      : #e56f8c;
+  --dark-pink : #99495D;
   --font-color: #3a3b7b;
+  --red       : #d44545;
+  --dark-red  : #872D2D;
 }
 
 * {
