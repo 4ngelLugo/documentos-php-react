@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+
+.pageNotFound-container {
+  width : 100dvw;
+  height: 100dvh;
+
+  display  : flex;
+  flex-flow: column;
+}
+
+.pageNotFound-header {
+  padding: 2rem 2rem 1.5rem 2rem;
+
+  background-color: #f2f2f2;
+}
+
+.pageNotFound-main {
+  display      : grid;
+  place-content: center;
+  text-align   : center;
+  flex-grow    : 1;
+}
+
+.pageNotFound-errorTitle {
+  font : 900 6rem 'Bowlby One';
+  color: var(--font-color);
+}
+
+.pageNotFound-errorDesc {
+  font: 600 2rem system-ui;
+}

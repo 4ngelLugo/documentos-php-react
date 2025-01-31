@@ -19,6 +19,6 @@ export default function LogOutButton() {
   }
 
   return (
-    <button className="logOutBtn" onClick={handleClick}>Log Out</button>
+    <button className="logOutBtn" onClick={handleClick}>Cerrar Sesión</button>
   )
 }

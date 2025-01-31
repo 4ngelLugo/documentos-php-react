@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './index.css'
 import Login from './pages/Login'
 import Home from './pages/Home'
+import PageNotFound from './pages/PageNotFound'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -12,7 +13,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<Navigate to='/login' replace />} />
         <Route path='/login' element={<Login />} />
         <Route path='/home' element={<Home />} />
-        <Route path='*' element={<h1>Página no encontrada</h1>} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
