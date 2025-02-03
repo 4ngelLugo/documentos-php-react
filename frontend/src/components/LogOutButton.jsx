@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
-export default function LogOutButton() {
+export default function LogOutButton () {
   const navigate = useNavigate()
 
   const CLOSE_SESSION_URL = 'http://localhost/backend/closeSession.php'
@@ -10,15 +10,15 @@ export default function LogOutButton() {
       method: 'POST',
       credentials: 'include'
     })
-    .then((res) => res.json())
-    .then((response) => {
-      if (response.session) {
-        navigate('/')
-      }
-    })
+      .then((res) => res.json())
+      .then((response) => {
+        if (response.session) {
+          navigate('/')
+        }
+      })
   }
 
   return (
-    <button className="logOutBtn" onClick={handleClick}>Cerrar Sesión</button>
+    <button className='logOutBtn' onClick={handleClick}>Cerrar Sesión</button>
   )
 }

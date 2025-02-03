@@ -8,13 +8,13 @@ export const useUserData = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    async function getUserData() {
+    async function getUserData () {
       const response = await fetch(SESSION_PREFIX_URL, {
         method: 'POST',
         credentials: 'include'
       })
       const data = await response.json()
-      if (data.error == 'no session') {
+      if (data.error === 'no session') {
         navigate('/')
       } else {
         setUserData(data)

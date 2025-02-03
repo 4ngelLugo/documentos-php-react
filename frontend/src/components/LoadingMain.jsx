@@ -1,7 +1,7 @@
-export default function LoadingMain() {
+export default function LoadingMain () {
   return (
-    <main className="loadingScreen">
-      <span className="loader"></span>
+    <main className='loadingScreen'>
+      <span className='loader' />
     </main>
   )
 }
