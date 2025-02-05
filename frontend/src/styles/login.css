@@ -67,11 +67,11 @@ html {
   font : 700 1.3em system-ui;
 
   transition: background-color 300ms ease;
+  cursor    : pointer;
 }
 
 .login_form-button:hover {
   background-color: var(--font-color);
-  cursor          : pointer;
 }
 
 .login_form-alert {
