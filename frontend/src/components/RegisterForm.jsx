@@ -1,6 +1,9 @@
+import { useGetRoles } from '../hooks/useGetRoles'
 import '../styles/signin.css'
 
 export default function RegisterForm() {
+  const { roles } = useGetRoles()
+
   return (
     <>
       <form className='register_form'>
@@ -34,8 +37,11 @@ export default function RegisterForm() {
             <label htmlFor='role'>Rol</label>
             <select name="role" id="role" defaultValue={'#'}>
               <option value="#" disabled>Seleccione un rol</option>
-              <option value="1">Administrador</option>
-              <option value="2">Usuario</option>
+              {roles && (
+                roles.map((role, index) => (
+                  <option key={index} value={role.rolId}>{role.rolNombre}</option>
+                ))
+              )}
             </select>
           </div>
 

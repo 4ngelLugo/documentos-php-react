@@ -79,15 +79,16 @@
 .pageOptionCard:hover {
   background-color: var(--dark-blue);
   color           : #fff;
-  box-shadow      : 0px 10px 30px -5px #7476ed94;
+  box-shadow      : 0px 10px 30px -5px var(--blue-shadow);
 }
 
 .logOutBtn {
   padding: .7rem;
 
-  border       : 1px solid var(--red);
-  border-radius: .5em;
-  color        : var(--red);
+  background-color: transparent;
+  border          : 1px solid var(--red);
+  border-radius   : .5em;
+  color           : var(--red);
 
   font: 600 1rem system-ui;
 
@@ -98,5 +99,5 @@
 .logOutBtn:hover {
   background-color: var(--red);
   color           : #fff;
-  box-shadow      : 0px 10px 30px -5px #d445456d;
+  box-shadow      : 0px 10px 30px -5px var(--red-shadow);
 }

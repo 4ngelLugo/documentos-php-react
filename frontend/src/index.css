@@ -11,15 +11,18 @@
   -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --light-blue : #64c2db;
-  --dark-blue  : #7476ed;
-  --light-green: #75DB67;
-  --dark-green : #46843E;
-  --pink       : #e56f8c;
-  --dark-pink  : #99495D;
-  --font-color : #3a3b7b;
-  --red        : #d44545;
-  --dark-red   : #872D2D;
+  --light-blue  : #64c2db;
+  --dark-blue   : #7476ed;
+  --blue-shadow : #7476ed94;
+  --light-green : #75DB67;
+  --dark-green  : #46843E;
+  --green-shadow: #46843E94;
+  --pink        : #e56f8c;
+  --dark-pink   : #99495D;
+  --font-color  : #3a3b7b;
+  --red         : #d44545;
+  --dark-red    : #872D2D;
+  --red-shadow  : #d445456d;
 }
 
 * {

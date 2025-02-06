@@ -1,15 +1,18 @@
 <?php
 
-class user {
+class user
+{
   private $conn;
   private $usersTable = 'usuarios';
   private $rolesTable = 'roles';
 
-  public function __construct($db) {
+  public function __construct($db)
+  {
     $this->conn = $db;
   }
 
-  public function findById($id) {
+  public function findById($id)
+  {
     $get_user = $this->conn->prepare("SELECT * FROM {$this->usersTable} WHERE usuarioId = :id");
     $get_user->bindParam(':id', $id);
     $get_user->execute();
@@ -26,9 +29,10 @@ class user {
     return [$user, $role_name];
   }
 
-  public function validateLogIn($id, $password) {
+  public function validateLogIn($id, $password)
+  {
     $user = $this->findById($id);
-    
+
     // password_verify($password, $user['usuarioContrasena']
     if ($user[0]['usuarioNombre'] && $password === $user[0]['usuarioContrasena']) {
       return $user;
