@@ -58,7 +58,7 @@
 .register_form-button {
   width     : 100%;
   padding   : .6em 1em;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   background-color: transparent;
   border          : 1px solid var(--dark-blue);
@@ -76,4 +76,31 @@
   border          : none;
   color           : #fff;
   box-shadow      : 0px 10px 30px -5px var(--blue-shadow);
+}
+
+.signin_form-alert {
+  width    : 100%;
+  padding  : 1rem;
+  position : absolute;
+  bottom   : 0;
+  left     : 0;
+  transform: translateY(100%);
+
+  text-align: center;
+  color     : #fff;
+  font      : 700 1.7em system-ui;
+
+  transition: all 500ms ease-in-out;
+}
+
+.errorAlert {
+  background-color: #e56f8c;
+  transform       : translateY(-120%);
+  opacity         : 1;
+}
+
+.successAlert {
+  background-color: #64dba4;
+  transform       : translateY(-120%);
+  opacity         : 1;
 }

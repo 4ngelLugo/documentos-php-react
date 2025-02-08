@@ -25,4 +25,19 @@ class AuthController
 
     return ['error' => 'invalid credentials'];
   }
+
+  public function register($id, $name, $surname, $email, $phone, $password, $role, $image)
+  {
+    if (empty($id) || empty($name) || empty($surname) || empty($email) || empty($password) || empty($role)) {
+      return ['error' => 'empty fields'];
+    }
+
+    $register = $this->userModel->registerUser($id, $name, $surname, $email, $phone, $password, $role, $image);
+
+    if ($register) {
+      return $register;
+    }
+
+    ['error' => 'register error'];
+  }
 }

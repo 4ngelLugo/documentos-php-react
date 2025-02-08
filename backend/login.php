@@ -35,11 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($output['success'])) {
     $user = $output['user'];
 
+    $base64Image = base64_encode($user[0]['usuarioImagen']);
+
     $_SESSION['user'] = [
       'id' => $user[0]['usuarioID'],
       'name' => $user[0]['usuarioNombre'],
       'role' => $user[1],
-      'image' => $user[0]['usuarioImagenDir'],
+      'image' => "data:image/jpeg;base64,{$base64Image}",
     ];
 
     array_pop($output);

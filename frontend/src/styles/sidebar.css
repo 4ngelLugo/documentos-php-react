@@ -1,8 +1,9 @@
 .sidebar {
   margin    : .5rem .25rem .5rem .5rem;
   padding   : 1rem;
+  min-width : 12.8em;
   height    : calc(100dvh - 1rem);
-  flex-basis: 300px;
+  flex-basis: 19rem;
 
   display        : flex;
   flex-flow      : column;
@@ -63,12 +64,12 @@
 }
 
 .pageOptionCard {
-  padding      : .8rem;
+  padding      : .6rem;
   border       : 1px solid var(--dark-blue);
-  border-radius: 1rem;
+  border-radius: 10px;
 
   text-align     : center;
-  font           : 600 1.2rem system-ui;
+  font           : 600 1.1rem system-ui;
   text-decoration: none;
   color          : var(--font-color);
 

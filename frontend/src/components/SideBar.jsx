@@ -3,7 +3,7 @@ import defaultUserPfp from '../assets/pictures/user.png'
 import LogOutButton from './LogOutButton'
 import PageOptions from '../components/PageOptions'
 
-export default function SideBar ({ userName, userRole }) {
+export default function SideBar ({ userName, userRole, isAdmin }) {
   return (
     <aside className='sidebar'>
       <div className='content_sidebar'>
@@ -17,7 +17,7 @@ export default function SideBar ({ userName, userRole }) {
           <h2 className='user_name'>{userName}</h2>
           <p className='user_role'>{userRole}</p>
         </section>
-        <PageOptions isAdmin={userRole === 'Administrador' && true} />
+        <PageOptions isAdmin={isAdmin} />
       </div>
       <LogOutButton />
     </aside>
