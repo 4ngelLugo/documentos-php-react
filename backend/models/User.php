@@ -33,8 +33,7 @@ class user
   {
     $user = $this->findById($id);
 
-    // password_verify($password, $user['usuarioContrasena']
-    if ($user[0]['usuarioNombre'] && $password === $user[0]['usuarioContrasena']) {
+    if ($user[0]['usuarioNombre'] && password_verify($password, $user[0]['usuarioContrasena'])) {
       return $user;
     }
 

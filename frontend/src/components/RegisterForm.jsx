@@ -78,7 +78,7 @@ export default function RegisterForm () {
 
           <div className='register_form-input_div'>
             <label htmlFor='email'>Correo Electrónico</label>
-            <input type='mail' id='email' name='email' placeholder='Correo Electrónico' />
+            <input type='email' id='email' name='email' placeholder='Correo Electrónico' />
           </div>
 
           <div className='register_form-input_div'>
