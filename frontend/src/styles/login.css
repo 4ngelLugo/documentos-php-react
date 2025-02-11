@@ -17,10 +17,10 @@ html {
 }
 
 .login_form {
-  padding: 4rem;
+  padding: 3rem;
 
   box-shadow   : 0px 10px 30px -5px #7476ed42;
-  border-radius: 2rem;
+  border-radius: 1.8rem;
 
   display    : flex;
   flex-flow  : column nowrap;
@@ -36,7 +36,7 @@ html {
 
 .login_form-input_div label {
   color: var(--font-color);
-  font : 600 1.3em system-ui;
+  font : 600 1.1em system-ui;
 }
 
 .login_form-input_div input {
@@ -64,7 +64,7 @@ html {
   border-radius   : 1rem;
 
   color: #fff;
-  font : 700 1.3em system-ui;
+  font : 700 1.1em system-ui;
 
   transition: background-color 300ms ease;
   cursor    : pointer;
@@ -72,32 +72,4 @@ html {
 
 .login_form-button:hover {
   background-color: var(--font-color);
-}
-
-.login_form-alert {
-  width    : 100%;
-  padding  : 1rem;
-  position : absolute;
-  bottom   : 0;
-  transform: translateY(100%);
-  opacity  : 0;
-
-  text-align: center;
-  color     : #fff;
-  font      : 700 2em system-ui;
-
-  transition: all 300ms ease-in-out;
-}
-
-.errorAlert {
-  background-color: #e56f8c;
-  transform       : translateY(-70%);
-  opacity         : 1;
-}
-
-
-.successAlert {
-  background-color: #64dba4;
-  transform       : translateY(-70%);
-  opacity         : 1;
 }
