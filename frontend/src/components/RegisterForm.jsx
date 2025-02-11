@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { useGetRoles } from '../hooks/useGetRoles'
+import RolesSelect from './RolesSelect'
 import '../styles/signin.css'
 
 export default function RegisterForm () {
   const [alertMessage, setAlertMessage] = useState()
   const [alertType, setAlertType] = useState()
-  const { roles } = useGetRoles()
 
   const LOGIN_PREFIX_URL = 'http://localhost/backend/signin.php'
 
@@ -91,17 +90,7 @@ export default function RegisterForm () {
             <input type='password' id='password' name='password' placeholder='Contraseña' />
           </div>
 
-          <div className='register_form-input_div'>
-            <label htmlFor='role'>Rol</label>
-            <select name='role' id='role' defaultValue='#'>
-              <option value='#' disabled>Seleccione un rol</option>
-              {roles && (
-                roles.map((role, index) => (
-                  <option key={index} value={role.rolId}>{role.rolNombre}</option>
-                ))
-              )}
-            </select>
-          </div>
+          <RolesSelect />
 
           <div className='register_form-input_div'>
             <label htmlFor='image'>Imagen de perfil</label>

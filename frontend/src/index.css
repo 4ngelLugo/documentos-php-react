@@ -31,7 +31,8 @@
   box-sizing: border-box;
 }
 
-.login_form-alert {
+.login_form-alert,
+.signin_form-alert {
 
   padding  : 1rem;
   position : absolute;
